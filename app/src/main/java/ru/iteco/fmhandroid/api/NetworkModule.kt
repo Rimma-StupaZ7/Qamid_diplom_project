@@ -1,5 +1,6 @@
 package ru.iteco.fmhandroid.api
 
+
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,7 +15,17 @@ import ru.iteco.fmhandroid.api.qualifier.NonAuthorized
 import ru.iteco.fmhandroid.api.qualifier.Refresh
 import ru.iteco.fmhandroid.auth.AppAuth
 import ru.iteco.fmhandroid.repository.authRepository.AuthRepository
+import java.security.KeyStore
+import java.security.SecureRandom
+import java.security.cert.X509Certificate
 import javax.inject.Provider
+import javax.net.ssl.HostnameVerifier
+import javax.net.ssl.SSLContext
+import javax.net.ssl.TrustManager
+import javax.net.ssl.TrustManagerFactory
+import javax.net.ssl.X509TrustManager
+import javax.security.cert.CertificateException
+
 
 @InstallIn(SingletonComponent::class)
 @Module
