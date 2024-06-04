@@ -16,6 +16,7 @@ import ru.iteco.fmhandroid.page.MissionPage;
 
 @Epic("Внутренние страницы приложения")
 @Feature("Цитаты")
+
 public class MissionTest extends BaseTest {
     @Before
     public void login() {

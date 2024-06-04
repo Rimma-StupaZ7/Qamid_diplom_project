@@ -5,6 +5,7 @@ import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static ru.iteco.fmhandroid.test.AuthUtils.goToMainPage;
 
+import androidx.annotation.NonNull;
 import androidx.test.espresso.ViewInteraction;
 
 import org.junit.Before;
@@ -26,6 +27,7 @@ import ru.iteco.fmhandroid.page.NewsPage;
 
 @Epic("Внутренние страницы приложения")
 @Feature("Новости")
+
 public class NewsTest extends BaseTest {
 
     @Before
@@ -162,6 +164,7 @@ public class NewsTest extends BaseTest {
         newsPage.checkNewsDescriptionVisible(newsDescription);
     }
 
+    @NonNull
     private String getRandomNumber(){
         Random random = new Random();
         return String.valueOf(random.nextInt(100_000));

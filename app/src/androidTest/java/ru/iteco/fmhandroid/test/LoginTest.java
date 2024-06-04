@@ -19,6 +19,7 @@ import ru.iteco.fmhandroid.page.MainPage;
 
 @Epic("Авторизация")
 @Feature("Вход в систему")
+
 public class LoginTest extends BaseTest {
 
     @Before

@@ -8,13 +8,12 @@ plugins {
     id 'androidx.navigation.safeargs.kotlin'
     id 'com.google.firebase.crashlytics'
     id 'io.qameta.allure' version '2.11.2'
+
 }
 
 android {
-   // compileSdkVersion 32
-    compileSdk 31
-    buildToolsVersion = "30.0.3"
-
+    compileSdkVersion 31
+    buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "ru.iteco.fmhandroid"
@@ -22,8 +21,9 @@ android {
         targetSdkVersion 31
         versionCode 14
         versionName "1.0.0"
-        testInstrumentationRunner 'io.qameta.allure.android.runners.AllureAndroidJUnitRunner'
-        testInstrumentationRunnerArguments clearPackageData: "true"
+//        testInstrumentationRunner 'io.qameta.allure.android.runners.AllureAndroidJUnitRunner'
+            testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+//        testInstrumentationRunnerArguments clearPackageData: "true"
     }
 
     compileOptions {
@@ -47,17 +47,15 @@ android {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField "String", "BASE_URL", '"https://students.netoservices.ru/qamid-diplom-backend/"'
+            buildConfigField "String", "BASE_URL", '"https://test.vhospice.org/api/fmh/"'
         }
         debug {
-            buildConfigField "String", "BASE_URL", '"https://students.netoservices.ru/qamid-diplom-backend/"'
+            buildConfigField "String", "BASE_URL", '"https://test.vhospice.org/api/fmh/"'
         }
     }
 }
 
 dependencies {
-    //implementation 'androidx.test.espresso:espresso-core:3.5.1'
-   //implementation 'androidx.test.ext:junit:1.1.5'
     def retrofit_version = "2.9.0"
     def retrofit_gson_version = "2.9.0"
     def okhttp_logging_version = "4.9.2"
