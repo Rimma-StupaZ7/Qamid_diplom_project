@@ -13,7 +13,6 @@ import ru.iteco.fmhandroid.ui.AppActivity;
 @LargeTest
 @RunWith(AllureAndroidJUnit4.class)
 public class BaseTest {
-
     @Rule
     public ActivityScenarioRule<AppActivity> mActivityScenarioRule =
             new ActivityScenarioRule<>(AppActivity.class);
