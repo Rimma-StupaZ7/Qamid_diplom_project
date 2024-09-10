@@ -43,7 +43,7 @@ public class AuthUtils {
         loginPage.typeLogin(LOGIN);
         loginPage.typePassword(PASSWORD);
 
-        loginPage.signIn();
+        loginPage.waitUntilErrorMessageLoaded();
 
         MainPage mainPage = new MainPage();
 
@@ -59,7 +59,7 @@ public class AuthUtils {
         loginPage.typeLogin(login);
         loginPage.typePassword(password);
 
-        loginPage.signIn();
+        loginPage.waitUntilErrorMessageLoaded();
 
     }
 

@@ -73,6 +73,7 @@ dependencies {
     def gson_version = '2.9.0'
     def swipe_refresh_version = '1.1.0'
 
+
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:$swipe_refresh_version"
@@ -115,6 +116,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-intents:3.4.0'
     implementation "androidx.test.espresso:espresso-idling-resource:3.4.0"
     androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.4.0'
+    androidTestImplementation 'androidx.test.uiautomator:uiautomator:2.2.0'
 
 
 //    testImplementation 'junit:junit:4.13.2'

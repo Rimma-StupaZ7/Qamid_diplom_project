@@ -11,6 +11,8 @@ import androidx.test.espresso.ViewInteraction;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.util.Random;
 
 import io.qameta.allure.kotlin.Allure;
@@ -29,6 +31,9 @@ import ru.iteco.fmhandroid.page.NewsPage;
 @Feature("Новости")
 
 public class NewsTest extends BaseTest {
+
+    public NewsTest() throws NoSuchAlgorithmException {
+    }
 
     @Before
     public void login() {
@@ -165,9 +170,15 @@ public class NewsTest extends BaseTest {
     }
 
     @NonNull
-    private String getRandomNumber(){
-        Random random = new Random();
-        return String.valueOf(random.nextInt(100_000));
+    private Random rand = SecureRandom.getInstanceStrong();  // SecureRandom is preferred to Random
+
+    public String getRandomNumber() {
+        int rValue = this.rand.nextInt(300_000);
+        return String.valueOf(rValue);
+        //...
+//    private String getRandomNumber(){
+//        Random random = new Random();
+//        return String.valueOf(random.nextInt(300_000));
     }
 
 }

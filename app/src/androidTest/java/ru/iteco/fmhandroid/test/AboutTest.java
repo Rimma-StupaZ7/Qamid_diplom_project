@@ -4,9 +4,10 @@ import static ru.iteco.fmhandroid.test.AuthUtils.goToMainPage;
 
 import androidx.test.espresso.Espresso;
 
+import org.junit.Before;
 import org.junit.Test;
 
-import io.qameta.allure.Allure;
+import io.qameta.allure.kotlin.Allure;
 import io.qameta.allure.kotlin.Description;
 import io.qameta.allure.kotlin.Epic;
 import io.qameta.allure.kotlin.Feature;
@@ -19,7 +20,7 @@ import ru.iteco.fmhandroid.page.NavPage;
 @Feature("О приложении")
 public class AboutTest extends BaseTest {
 
-
+    @Before
     public void login() {
         goToMainPage();
     }
@@ -28,7 +29,7 @@ public class AboutTest extends BaseTest {
     @Story("Переход на экран О Приложении")
     @Description("Переход на экран О Приложении с экрана Main")
     public void goToAboutPageFromMainTest() {
-        Allure.step( "Вызвать меню");
+        Allure.step("Вызвать меню");
         NavPage navPage = new NavPage();
         Allure.step("Перейти на страницу О приложении");
         navPage.goToAboutPage();
@@ -58,5 +59,4 @@ public class AboutTest extends BaseTest {
         Espresso.pressBack();
     }
 }
-
 

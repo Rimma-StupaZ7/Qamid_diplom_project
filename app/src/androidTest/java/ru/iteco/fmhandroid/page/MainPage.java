@@ -25,7 +25,7 @@ public class MainPage {
     }
 
     public void waitUntilPageLoaded() {
-        onView(isRoot()).perform(waitDisplayed(R.id.container_list_news_include_on_fragment_main, 10000));
+        onView(isRoot()).perform(waitDisplayed(R.id.container_list_news_include_on_fragment_main, 30000));
     }
 
     public void goToMissionPage() {

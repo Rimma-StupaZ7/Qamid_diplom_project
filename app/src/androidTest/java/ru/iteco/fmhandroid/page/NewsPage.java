@@ -17,7 +17,6 @@ import ru.iteco.fmhandroid.R;
 public class NewsPage {
     ViewInteraction newsContainer = onView(withId(R.id.container_list_news_include));
     ViewInteraction goToControlPanelButton = onView(withId(R.id.edit_news_material_button));
-
     public void validatePageLoaded() {
         newsContainer.check(matches(isDisplayed()));
         goToControlPanelButton.check(matches(isDisplayed()));
@@ -26,11 +25,9 @@ public class NewsPage {
     public void waitUntilPageLoaded() {
         onView(isRoot()).perform(waitDisplayed(R.id.container_list_news_include, 6000));
     }
-
     public void goToControlPanel() {
         goToControlPanelButton.perform(click());
     }
-
     public void checkNewsDescriptionVisible(String description) {
         onView(allOf(withText(description), isDisplayed())).check(matches(isDisplayed()));
     }

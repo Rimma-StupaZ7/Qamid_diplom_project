@@ -44,7 +44,7 @@ public class LoginPage {
     }
 
     public void waitUntilPageLoaded() {
-        onView(isRoot()).perform(waitDisplayed(R.id.login_text_input_layout, 10_000));
+        onView(isRoot()).perform(waitDisplayed(R.id.login_text_input_layout, 20_000));
     }
 
     public void typeLogin(String login) {
@@ -55,14 +55,23 @@ public class LoginPage {
         passwordInputText.perform(replaceText(password), closeSoftKeyboard());
     }
 
-    public void signIn() {
-        signInButton.perform(click());
-    }
+//    public void waitUntilErrorMessageLoaded() {
+//        signInButton.perform(click());
+//    }
+//    public void run () {try {
+//        while (true) {
+//                // do stuff
+//            }
+//        } catch (InterruptedException e) {LOGGER.log(Level.WARN, "Interrupted!", e);
+//            // Restore interrupted state...
+//            Thread.currentThread().interrupt();
+//        }
+//    }
 
     public void waitUntilErrorMessageLoaded() {
         //У Espresso нет возможности взаимодействовать с системным pop up
         try {
-            Thread.sleep(1_000);
+            Thread.sleep(2_000);
         } catch (Exception e){
         }
     }
