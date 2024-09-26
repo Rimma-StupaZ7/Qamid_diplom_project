@@ -42,6 +42,7 @@ public class AuthUtils {
 
         loginPage.typeLogin(LOGIN);
         loginPage.typePassword(PASSWORD);
+        loginPage.clickSignIn();
 
         loginPage.waitUntilErrorMessageLoaded();
 

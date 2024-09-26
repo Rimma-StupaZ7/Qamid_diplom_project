@@ -21,6 +21,8 @@ import ru.iteco.fmhandroid.R;
 
 public class LoginPage {
 
+
+
     ViewInteraction loginInputText = onView(
             allOf(
                     isDescendantOfA(withId(R.id.login_text_input_layout)), // Это ID вашего TextInputLayout
@@ -35,7 +37,9 @@ public class LoginPage {
             )
     );
 
+
     ViewInteraction signInButton = onView(withId(R.id.enter_button));
+
 
     public void validatePageLoaded() {
         loginInputText.check(matches(isDisplayed()));
@@ -54,6 +58,12 @@ public class LoginPage {
     public void typePassword(String password) {
         passwordInputText.perform(replaceText(password), closeSoftKeyboard());
     }
+
+    public void clickSignIn() {
+        signInButton.perform(click());
+    }
+
+
 
 //    public void waitUntilErrorMessageLoaded() {
 //        signInButton.perform(click());
@@ -75,5 +85,6 @@ public class LoginPage {
         } catch (Exception e){
         }
     }
+
 
 }

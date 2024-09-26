@@ -8,7 +8,7 @@ import static ru.iteco.fmhandroid.test.AuthUtils.unsuccessfulLogIn;
 import org.junit.Before;
 import org.junit.Test;
 
-import io.qameta.allure.Allure;
+import io.qameta.allure.kotlin.Allure;
 import io.qameta.allure.kotlin.Description;
 import io.qameta.allure.kotlin.Epic;
 import io.qameta.allure.kotlin.Feature;
